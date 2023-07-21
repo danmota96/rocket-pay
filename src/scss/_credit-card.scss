@@ -1,0 +1,71 @@
+@use 'mixins';
+.cc {
+  background: no-repeat center/cover;
+  background-image: url("/public/cc-bg.svg");
+  width: 36rem;
+  height: 23rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-logo{
+    @include mixins.flex-center;
+    justify-content: space-between;
+  }
+  &-extra {
+    @extend .cc-logo;
+  }
+
+  &-info {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  &-number {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.9rem;
+    letter-spacing: 0.04em;
+
+    color: #e8e8e8;
+    text-shadow: 0 0.12rem 0.32rem rgb(23 23 23 / 40%);
+  }
+
+  &-holder {
+    display: grid;
+    gap: 0.4rem;
+  }
+  &-expiration {
+    @extend .cc-holder;
+  }
+  &-security {
+    @extend .cc-holder;
+  }
+
+  .label {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0.25rem 0.25rem rgb(22 22 22 / 16%);
+    text-transform: uppercase;
+  }
+
+  &,
+  &-logo,
+  &-number {
+    position: relative;
+  }
+
+  &-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  } 
+}
